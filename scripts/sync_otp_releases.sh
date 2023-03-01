@@ -17,6 +17,6 @@ for i in $otp_tags; do
     echo release $i already exists
   else
     echo "Kicking off build for $i"
-    gh workflow run -R "burrito-elixir/erlang-builder" build_otp.yml -f version=${i/OTP-/}
+    gh workflow run -R "hochata/burrito-builder" build_otp.yml -f version=${i/OTP-/}
   fi
 done
