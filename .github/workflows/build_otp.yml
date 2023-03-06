@@ -8,7 +8,7 @@ on:
 
 jobs:
   ensure_release:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: "Ensure release (${{ github.event.inputs.version }})"
     steps:
       - run: gh api -XHEAD repos/erlang/otp/releases/tags/OTP-${{ github.event.inputs.version }}
@@ -46,7 +46,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-18.04]
+        os: [ubuntu-20.04]
     steps:
     - uses: actions/checkout@v2
 
@@ -119,7 +119,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-18.04, macos-10.15]
+        os: [ubuntu-20.04, macos-10.15]
     steps:
     - uses: actions/checkout@v2
 
